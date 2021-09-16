@@ -84,7 +84,7 @@ type Boondoggle struct {
 	ExtraEnv        map[string]string
 }
 
-// HelmRepo is the data needed to add a Helm Repository. Part of Boondoggle struct.
+// HelmRepo is the data needed to add a Helm Repository. Part of the Boondoggle struct.
 type HelmRepo struct {
 	Name            string
 	URL             string
