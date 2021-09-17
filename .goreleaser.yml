@@ -13,7 +13,7 @@ builds:
 brews:
   -
     name: boondoggle
-    homepage: "https://github.com/gmorse81/boondoggle"
+    homepage: "https://github.com/basetime/boondoggle"
     github:
       owner: gmorse81
       name: homebrew-boondoggle

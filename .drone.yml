@@ -35,7 +35,7 @@ steps:
         from_secret: docker_password
     settings:
       auto_tag: true
-      repo: gmorse81/boondoggle
+      repo: millispeed/boondoggle
     when:
       event: [ tag ]
       status: [ success ]
@@ -50,7 +50,7 @@ steps:
   #   settings:
   #     tags:
   #       - latest
-  #     repo: gmorse81/boondoggle
+  #     repo: millispeed/boondoggle
   #   when:
   #     event: [ tag ]
   #     status: [ success ]
