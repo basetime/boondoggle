@@ -27,5 +27,4 @@ COPY --from=helmbuild /tmp/linux-amd64/helm /bin/helm
 COPY --from=gobuild /boondoggle /bin/boondoggle
 RUN helm init -c
 RUN helm plugin install https://github.com/futuresimple/helm-secrets
-RUN helm version
 CMD ["boondoggle", "-h"]
