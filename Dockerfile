@@ -7,7 +7,7 @@ git \
 gzip \
 tar
 # ARG VERSION=v3.3.1
-ARG VERSION=v2.9.1
+ARG VERSION=v2.17.0
 ARG FILENAME=helm-${VERSION}-linux-amd64.tar.gz
 WORKDIR /
 RUN curl -L "https://get.helm.sh/${FILENAME}" | tar zxv -C /tmp
