@@ -14,7 +14,8 @@
 
 package main
 
-import "github.com/basetime/boondoggle/cmd"
+// import "github.com/basetime/boondoggle/cmd"
+import "github.com/basetime/boondoggle/tree/basetime/cmd"
 
 func main() {
 	cmd.Execute()
