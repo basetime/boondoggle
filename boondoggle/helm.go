@@ -66,10 +66,10 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 
 	// Add a longer timeout
 	if b.is2() {
-		chunk := "--timeout 1800 --wait"
+		chunk := "--timeout 1801 --wait"
 		fullcommand = append(fullcommand, strings.Split(chunk, " ")...)
 	} else {
-		chunk := "--timeout 1800s --wait"
+		chunk := "--timeout 1801s --wait"
 		fullcommand = append(fullcommand, strings.Split(chunk, " ")...)
 	}
 
