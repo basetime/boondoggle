@@ -101,7 +101,16 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 
 	// Run the command
 	if dryRun == false {
-		fmt.Println("Installing the environment.....")
+		fmt.Println("Prepare the environment...")
+		cleanupCmd := exec.Command("kubectl delete service -n nh-test nh-test-traefik-external")
+		cleanupCmd.CombinedOutput()
+
+		// kubectl delete service -n <namespace> <service-name>
+		// kubectl delete deployment -n <namespace> <depoyment-name>
+		// kubectl delete ingress -n <namespace> <ingress-name>
+		
+
+		fmt.Println("Installing the environment...")
 		fmt.Println("helm args:")
 		fmt.Println(fullcommand)
 		out, err := cmd.CombinedOutput()
