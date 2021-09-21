@@ -102,7 +102,8 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 	// Run the command
 	if dryRun == false {
 		fmt.Println("Installing the environment.....")
-		fmt.Printf(cmd.String())
+		fmt.Println("helm args:")
+		fmt.Println(fullcommand)
 		out, err := cmd.CombinedOutput()
 		return out, err
 	}
