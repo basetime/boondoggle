@@ -101,7 +101,7 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 
 	// Run the command
 	if dryRun == false {
-		fmt.Println("Installing the environment...")
+		fmt.Println("Installing the environment...!")
 		out, err := cmd.CombinedOutput()
 		return out, err
 	}
