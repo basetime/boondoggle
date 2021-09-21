@@ -66,10 +66,10 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 
 	// Add a longer timeout
 	if b.is2() {
-		chunk := "--timeout 1801 --wait"
+		chunk := "--timeout 1802 --wait"
 		fullcommand = append(fullcommand, strings.Split(chunk, " ")...)
 	} else {
-		chunk := "--timeout 1801s --wait"
+		chunk := "--timeout 1802s --wait"
 		fullcommand = append(fullcommand, strings.Split(chunk, " ")...)
 	}
 
@@ -101,7 +101,7 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 
 	// Run the command
 	if dryRun == false {
-		fmt.Println("Installing the environment...!")
+		fmt.Println("Installing the environment....")
 		out, err := cmd.CombinedOutput()
 		return out, err
 	}
