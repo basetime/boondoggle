@@ -15,6 +15,8 @@ import (
 
 // DoUpgrade builds and runs the helm upgrade --install command.
 func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, useSecrets bool, tls bool, tillerNamespace string) ([]byte, error) {
+	fmt.Println("DoUpgrade 1")
+
 	fullcommand := []string{"upgrade", "-i"}
 
 	// Add the release name
@@ -102,7 +104,7 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 	// Run the command
 	if dryRun == false {
 		fmt.Println("Prepare the environment...")
-		prepCmd := exec.Command("kubectl -n nh-test get all")
+		prepCmd := exec.Command("kubectl delete clusterrole nginx-ingress && kubectl delete clusterrolebinding nginx-ingress")
 		prepOut, _ := prepCmd.CombinedOutput()
 		fmt.Println(prepOut)
 
