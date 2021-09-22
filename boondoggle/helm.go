@@ -15,7 +15,7 @@ import (
 
 // DoUpgrade builds and runs the helm upgrade --install command.
 func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, useSecrets bool, tls bool, tillerNamespace string) ([]byte, error) {
-	fmt.Println("___DoUpgrade 2")
+	fmt.Println("___DoUpgrade 3")
 
 	fullcommand := []string{"upgrade", "-i"}
 
@@ -68,10 +68,10 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 
 	// Add a longer timeout
 	if b.is2() {
-		chunk := "--timeout 1802 --wait"
+		chunk := "--timeout 1800 --wait"
 		fullcommand = append(fullcommand, strings.Split(chunk, " ")...)
 	} else {
-		chunk := "--timeout 1802s --wait"
+		chunk := "--timeout 1800s --wait --skip-crds"
 		fullcommand = append(fullcommand, strings.Split(chunk, " ")...)
 	}
 
