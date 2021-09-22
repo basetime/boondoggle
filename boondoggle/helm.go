@@ -15,7 +15,7 @@ import (
 
 // DoUpgrade builds and runs the helm upgrade --install command.
 func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, useSecrets bool, tls bool, tillerNamespace string) ([]byte, error) {
-	fmt.Println("DoUpgrade 1")
+	fmt.Println("___DoUpgrade 1")
 
 	fullcommand := []string{"upgrade", "-i"}
 
