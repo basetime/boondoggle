@@ -6,8 +6,8 @@ curl \
 git \
 gzip \
 tar
-# ARG VERSION=v3.3.1
-ARG VERSION=v2.17.0
+ARG VERSION=v3.3.1
+# ARG VERSION=v2.17.0
 ARG FILENAME=helm-${VERSION}-linux-amd64.tar.gz
 WORKDIR /
 RUN curl -L "https://get.helm.sh/${FILENAME}" | tar zxv -C /tmp
@@ -26,6 +26,6 @@ COPY --from=helmbuild /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=helmbuild /tmp/linux-amd64/helm /bin/helm
 COPY --from=gobuild /boondoggle /bin/boondoggle
 # RUN helm init -c
-RUN helm init -c --service-account tiller
+# RUN helm init -c --service-account tiller
 RUN helm plugin install https://github.com/futuresimple/helm-secrets
 CMD ["boondoggle", "-h"]
