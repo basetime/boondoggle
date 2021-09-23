@@ -19,6 +19,8 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 
 	fullcommand := []string{"upgrade", "-i"}
 
+	fullcommand = append(fullcommand, "--debug")
+
 	// Add the release name
 	if release != "" {
 		fullcommand = append(fullcommand, release)
