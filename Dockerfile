@@ -12,7 +12,7 @@ ARG FILENAME=helm-${VERSION}-linux-amd64.tar.gz
 WORKDIR /
 RUN curl -L "https://get.helm.sh/${FILENAME}" | tar zxv -C /tmp
 
-FROM golang:1.11 as gobuild
+FROM golang:1.14 as gobuild
 WORKDIR /boondogglefiles
 COPY --from=helmbuild /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY . .
