@@ -15,7 +15,7 @@ import (
 
 // DoUpgrade builds and runs the helm upgrade --install command.
 func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, useSecrets bool, tls bool, tillerNamespace string) ([]byte, error) {
-	fmt.Println("___DoUpgrade 3")
+	fmt.Println("___ DoUpgrade 4")
 
 	fullcommand := []string{"upgrade", "-i"}
 
@@ -71,7 +71,7 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 		chunk := "--timeout 1800 --wait"
 		fullcommand = append(fullcommand, strings.Split(chunk, " ")...)
 	} else {
-		chunk := "--timeout 1800s --wait --skip-crds"
+		chunk := "--timeout 1800s --wait"
 		fullcommand = append(fullcommand, strings.Split(chunk, " ")...)
 	}
 
@@ -103,10 +103,10 @@ func (b *Boondoggle) DoUpgrade(namespace string, release string, dryRun bool, us
 
 	// Run the command
 	if dryRun == false {
-		fmt.Println("Prepare the environment...")
-		prepCmd := exec.Command("kubectl get namespace")
-		prepOut, _ := prepCmd.CombinedOutput()
-		fmt.Println(prepOut)
+		// fmt.Println("Prepare the environment...")
+		// prepCmd := exec.Command("kubectl get namespace")
+		// prepOut, _ := prepCmd.CombinedOutput()
+		// fmt.Println(prepOut)
 
 		// kubectl delete service -n <namespace> <service-name>
 		// kubectl delete deployment -n <namespace> <depoyment-name>
