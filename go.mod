@@ -1,4 +1,4 @@
-module github.com/gmorse81/boondoggle/v3
+module github.com/basetime/boondoggle
 
 go 1.14
 

@@ -59,7 +59,7 @@ steps:
       DOCKER_PASSWORD:
         from_secret: docker_password
     settings:
-      repo: gmorse81/boondoggle
+      repo: millispeed/boondoggle
       tags:
         - dev
       dry_run: true

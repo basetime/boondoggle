@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/gmorse81/boondoggle/v3/cmd"
+import "github.com/basetime/boondoggle/cmd"
 
 func main() {
 	cmd.Execute()

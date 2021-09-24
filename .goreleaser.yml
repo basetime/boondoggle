@@ -10,16 +10,16 @@ builds:
     flags:
       - -mod=vendor
 
-brews:
-  -
-    name: boondoggle
-    homepage: "https://github.com/basetime/boondoggle"
-    github:
-      owner: gmorse81
-      name: homebrew-boondoggle
-    commit_author:
-      name: gmorse81
-      email: gmorse81@gmail.com
+# brews:
+#   -
+#     name: boondoggle
+#     homepage: "https://github.com/basetime/boondoggle"
+#     github:
+#       owner: gmorse81
+#       name: homebrew-boondoggle
+#     commit_author:
+#       name: gmorse81
+#       email: gmorse81@gmail.com
 
 archives:
   -
